@@ -74,7 +74,12 @@ $contador = isset($_SESSION['carrito']) ? count($_SESSION['carrito']) : 0;
         <tbody>
           <?php foreach ($_SESSION['carrito'] as $i => $item): ?>
             <tr style="text-align: center; border-bottom: 1px solid #ccc;">
-              <td><img src="imagenes/<?= htmlspecialchars($item['imagen']) ?>" style="height: 80px;"></td>
+              <?php
+                $imgRaw = $item['imagen'];
+                $imgEsc = htmlspecialchars($imgRaw);
+                $imgSrc = (preg_match('/^https?:\\/\\//i', $imgRaw)) ? $imgEsc : 'imagenes/' . $imgEsc;
+              ?>
+              <td><img src="<?= $imgSrc ?>" style="height: 80px;"></td>
               <td><?= htmlspecialchars($item['nombre']) ?></td>
               <td><?= htmlspecialchars($item['talle']) ?></td>
               <td>$<?= number_format($item['precio'], 2) ?></td>

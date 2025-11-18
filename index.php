@@ -75,7 +75,12 @@ $contador = isset($_SESSION['carrito']) ? count($_SESSION['carrito']) : 0;
       <div class="grid">
         <?php foreach ($productos as $p): ?>
           <div class="producto">
-            <img src="imagenes/<?= htmlspecialchars($p->imagen_url) ?>" alt="<?= htmlspecialchars($p->nombre) ?>">
+            <?php
+              $imgRaw = $p->imagen_url;
+              $imgEsc = htmlspecialchars($imgRaw);
+              $imgSrc = (preg_match('/^https?:\\/\\//i', $imgRaw)) ? $imgEsc : 'imagenes/' . $imgEsc;
+            ?>
+            <img src="<?= $imgSrc ?>" alt="<?= htmlspecialchars($p->nombre) ?>">
             <h3><?= htmlspecialchars($p->nombre) ?></h3>
             <p class="precio">$<?= number_format($p->precio, 2) ?></p>
             <small class="talle">Talle: <?= htmlspecialchars($p->talle) ?></small>

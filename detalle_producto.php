@@ -41,7 +41,12 @@ if (!$producto) {
 <div class="container py-5">
   <div class="row">
     <div class="col-md-6">
-      <img src="imagenes/<?= htmlspecialchars($producto['imagen_url']) ?>" class="img-fluid" alt="<?= htmlspecialchars($producto['nombre']) ?>">
+      <?php
+        $imgRaw = $producto['imagen_url'];
+        $imgEsc = htmlspecialchars($imgRaw);
+        $imgSrc = (preg_match('/^https?:\\/\\//i', $imgRaw)) ? $imgEsc : 'imagenes/' . $imgEsc;
+      ?>
+      <img src="<?= $imgSrc ?>" class="img-fluid" alt="<?= htmlspecialchars($producto['nombre']) ?>">
     </div>
     <div class="col-md-6">
       <h2><?= htmlspecialchars($producto['nombre']) ?></h2>

@@ -57,7 +57,12 @@ $contador = isset($_SESSION['carrito']) ? count($_SESSION['carrito']) : 0;
       <div class="col-md-4" data-aos="fade-up">
         <div class="card h-100 shadow-sm">
           <a href="detalle_producto.php?id=<?= $p['id'] ?>">
-            <img src="imagenes/<?= htmlspecialchars($p['imagen_url']) ?>" class="card-img-top" alt="<?= htmlspecialchars($p['nombre']) ?>">
+            <?php
+              $imgRaw = $p['imagen_url'];
+              $imgEsc = htmlspecialchars($imgRaw);
+              $imgSrc = (preg_match('/^https?:\\/\\//i', $imgRaw)) ? $imgEsc : 'imagenes/' . $imgEsc;
+            ?>
+            <img src="<?= $imgSrc ?>" class="card-img-top" alt="<?= htmlspecialchars($p['nombre']) ?>">
           </a>
           <div class="card-body">
             <h5 class="card-title"><?= htmlspecialchars($p['nombre']) ?></h5>

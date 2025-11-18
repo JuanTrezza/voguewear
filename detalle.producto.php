@@ -40,7 +40,12 @@ if ($id) {
   <?php if ($producto): ?>
     <div class="row">
       <div class="col-md-6">
-        <img src="imagenes/<?= htmlspecialchars($producto['imagen_url']) ?>" class="img-fluid rounded shadow-sm" alt="<?= htmlspecialchars($producto['nombre']) ?>">
+        <?php
+          $imgRaw = $producto['imagen_url'];
+          $imgEsc = htmlspecialchars($imgRaw);
+          $imgSrc = (preg_match('/^https?:\\/\\//i', $imgRaw)) ? $imgEsc : 'imagenes/' . $imgEsc;
+        ?>
+        <img src="<?= $imgSrc ?>" class="img-fluid rounded shadow-sm" alt="<?= htmlspecialchars($producto['nombre']) ?>">
       </div>
       <div class="col-md-6">
         <h1><?= htmlspecialchars($producto['nombre']) ?></h1>
