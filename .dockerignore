@@ -1,0 +1,8 @@
+vendor/
+node_modules/
+.git
+*.log
+*.env
+/.idea
+/.vscode
+/db_data
