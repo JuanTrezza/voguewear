@@ -1,0 +1,254 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+}
+
+.header .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222222;
+}
+
+.nav a {
+  color: #555555;
+  margin-left: 24px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Hero Banner estilo AWADA */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn-banner {
+  padding: 0.9rem 2rem;
+  background-color: #222222;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-banner:hover {
+  background-color: #444444;
+}
+
+/* Sección productos */
+.productos {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.productos h2 {
+  margin-bottom: 2.5rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1200px;
+  margin: auto;
+}
+
+.producto {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.producto h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1rem 1rem 0.5rem;
+  color: #222222;
+}
+
+.producto p {
+  color: #c2185b;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.producto small {
+  display: block;
+  margin: 0 1rem 1rem;
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+.boton-agregar {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 0 1rem 1rem;
+  padding: 0.8rem 0;
+  background-color: #c2185b;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton-agregar:hover {
+  background-color: #ad1457;
+}
+
+/* Sección extra/promoción */
+.extra {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.extra h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 1rem;
+}
+
+.extra p {
+  font-size: 1rem;
+  color: #555555;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #222222;
+  color: #cccccc;
+  padding: 3rem 1rem;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer div {
+  flex: 1 1 280px;
+  margin: 1rem 0;
+}
+
+.footer h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.footer a {
+  color: #bbbbbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+
+
